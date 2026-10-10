@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Project Challenge of Long Beach is a New York not-for-profit that organizes volunteers and local churches to help Long Beach, NY families.">
+<title>Project Challenge of Long Beach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a sun-yellow beach-pass band for the name, then a single left-aligned column with a 2x2 program grid. */
+:root {
+  --bg: #eef3f3;
+  --surface: #ffffff;
+  --ink: #12263a;
+  --muted: #4a5d6a;
+  --line: #c8d5d7;
+  --sea: #1f5e6b;
+  --sun: #f2bf2a;
+  --on-sun: #12263a;
+  --display: "Big Shoulders Display", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1c26; --surface: #162733; --ink: #e7eef0; --muted: #a2b3bc;
+    --line: #2b404d; --sea: #74b8c4; --sun: #f2bf2a; --on-sun: #12263a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1c26; --surface: #162733; --ink: #e7eef0; --muted: #a2b3bc;
+  --line: #2b404d; --sea: #74b8c4; --sun: #f2bf2a; --on-sun: #12263a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+
+/* Hero band */
+.band { background: var(--sun); color: var(--on-sun); padding-block: clamp(40px, 7vw, 88px) clamp(32px, 5vw, 56px); }
+.place {
+  font-family: var(--mono); font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase;
+  display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 20px;
+}
+h1 {
+  font-family: var(--display); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(3rem, 10vw, 7.25rem); line-height: 0.88; letter-spacing: 0.005em;
+  margin: 0; text-wrap: balance; max-width: 11ch;
+}
+.lede { font-size: clamp(1.125rem, 2.2vw, 1.375rem); line-height: 1.5; max-width: 34em; margin: 28px 0 0; }
+.tide { display: block; width: 100%; height: 22px; color: var(--sun); background: var(--bg); }
+
+/* Sections */
+section { padding-block: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
+section:first-of-type { border-top: 0; }
+h2 {
+  font-family: var(--display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2rem, 4.5vw, 2.875rem); line-height: 1; letter-spacing: 0.01em;
+  margin: 0 0 24px; text-wrap: balance;
+}
+h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 1.625rem; line-height: 1.05; margin: 0 0 10px; letter-spacing: 0.01em; }
+p { margin: 0; max-width: 62ch; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+
+.programs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.program { padding: 24px 24px 28px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.program:nth-child(odd) { border-right: 1px solid var(--line); }
+.program:nth-child(even) { padding-left: 24px; padding-right: 0; }
+.when { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sea); margin-bottom: 8px; }
+.program p { color: var(--muted); }
+
+.careportal { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; border-left: 3px solid var(--sea); }
+.steps li { padding: 4px 0 18px 20px; position: relative; }
+.steps li:last-child { padding-bottom: 4px; }
+.steps .n { font-family: var(--mono); font-size: 0.75rem; color: var(--sea); letter-spacing: 0.06em; display: block; }
+
+.two { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+.board { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.board li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1.125rem; }
+
+.helps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; }
+.helps li { padding-left: 18px; position: relative; }
+.helps li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; background: var(--sun); border: 1px solid var(--ink); }
+
+.contact { background: var(--surface); border: 1px solid var(--line); padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+.label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.email { font-family: var(--mono); font-size: 1rem; word-break: break-all; color: var(--ink); }
+button {
+  font: 500 0.8125rem/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase;
+  background: var(--ink); color: var(--bg); border: 0; padding: 9px 12px; cursor: pointer;
+}
+button:hover { background: var(--sea); }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--sea); outline-offset: 2px; }
+a { color: var(--sea); }
+
+footer { border-top: 2px solid var(--ink); padding-block: 24px 40px; }
+.legal { font-family: var(--mono); font-size: 0.75rem; line-height: 1.7; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 24px; }
+
+@media (max-width: 720px) {
+  .programs, .careportal, .two, .helps { grid-template-columns: minmax(0, 1fr); }
+  .program, .program:nth-child(even) { padding: 20px 0 24px; border-right: 0; }
+  .program:nth-child(odd) { border-right: 0; }
+}
+</style>
+<style>html{color-scheme:light} body{margin:0} img{max-width:100%}</style>
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <p class="place"><span>Long Beach, New York</span><span>Founded 2024</span></p>
+    <h1>Project Challenge of Long Beach</h1>
+    <p class="lede">We organize volunteers and local churches to help Long Beach families who need a hand, whether that's a Thanksgiving dinner, a free night out with the kids, or help with a bill during a hard month.</p>
+  </div>
+</header>
+<svg class="tide" viewBox="0 0 1200 22" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1200 V8 C1100 22 1000 22 900 10 C800 0 700 0 600 10 C500 22 400 22 300 10 C200 0 100 0 0 10 Z" fill="currentColor"/></svg>
+
+<main class="wrap">
+  <section id="programs" aria-labelledby="programs-h">
+    <h2 id="programs-h">What we do</h2>
+    <div class="programs">
+      <article class="program">
+        <div class="when">November</div>
+        <h3>Thanksgiving baskets</h3>
+        <p>Volunteers collect donated food, pack baskets with a full holiday meal, and deliver them to Long Beach families who would otherwise go without.</p>
+      </article>
+      <article class="program">
+        <div class="when">Winter</div>
+        <h3>Winter Wonderland</h3>
+        <p>A free festival for local families with games, food, and activities for kids. No tickets and no cost to attend.</p>
+      </article>
+      <article class="program">
+        <div class="when">Warm months</div>
+        <h3>Community barbecues</h3>
+        <p>Free cookouts open to the whole neighborhood. Come eat, meet the people on your block, and find out what's going on in town.</p>
+      </article>
+      <article class="program">
+        <div class="when">Throughout the year</div>
+        <h3>Open mic nights</h3>
+        <p>An open stage for local musicians, poets, and performers. Anyone can sign up, and anyone can come listen.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="careportal" aria-labelledby="careportal-h">
+    <div class="careportal">
+      <div class="stack">
+        <h2 id="careportal-h">Help for families in a hard month</h2>
+        <p>We're launching a partnership with CarePortal, a national network that connects churches with children and families in crisis.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="n">Step 1</span>A school social worker or caseworker meets a Long Beach family with a specific need, like a bed for a child, groceries, or a past-due utility bill.</li>
+        <li><span class="n">Step 2</span>They post the need to CarePortal, and the request comes to us.</li>
+        <li><span class="n">Step 3</span>Our volunteers meet the need directly.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="two">
+      <div class="stack">
+        <h2 id="about-h">Who we are</h2>
+        <p>Project Challenge of Long Beach Incorporated is a New York not-for-profit corporation, formed on November 4, 2024.</p>
+        <p>We work alongside People's Church of Long Beach, which hosts our events at 111 Delaware Avenue and supports our programs. Volunteers run every program. No one on our board is paid.</p>
+      </div>
+      <div>
+        <div class="label">Board of directors</div>
+        <ul class="board">
+          <li>Andrew Bertodatti</li>
+          <li>Sharon Abramson</li>
+          <li>Bethany McCarthy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="two">
+      <div class="stack">
+        <h2 id="contact-h">Get involved</h2>
+        <p>Most of what we do happens because a neighbor shows up. Here's where we need people:</p>
+        <ul class="helps">
+          <li>Packing and delivering Thanksgiving baskets</li>
+          <li>Donating food for the baskets</li>
+          <li>Setting up and running Winter Wonderland</li>
+          <li>Grilling or serving at a barbecue</li>
+          <li>Performing at an open mic</li>
+          <li>Meeting a CarePortal need</li>
+        </ul>
+        <p>If you know a family who could use help, tell us. We'll keep it private.</p>
+      </div>
+      <div class="contact">
+        <div>
+          <div class="label">Email</div>
+          <div class="email-row">
+            <span class="email" id="email">andrew@peopleschurchny.com</span>
+            <button type="button" id="copy-email">Copy</button>
+          </div>
+        </div>
+        <div>
+          <div class="label">Mailing address</div>
+          <div>111 Delaware Ave<br>Long Beach, NY 11561</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="legal">
+    <span>Project Challenge of Long Beach Incorporated</span>
+    <span>New York not-for-profit corporation</span>
+    <span>NY DOS ID 7465525</span>
+    <span>EIN 33-2486320</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var el = document.getElementById('email');
+  function selectText() {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  btn.addEventListener('click', function () {
+    var text = el.textContent.trim();
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+    try {
+      navigator.clipboard.writeText(text).then(done, function () { selectText(); btn.textContent = 'Selected'; });
+    } catch (e) { selectText(); btn.textContent = 'Selected'; }
+  });
+})();
+</script>
+</body>
+</html>
